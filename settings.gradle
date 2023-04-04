@@ -1,3 +1,4 @@
 rootProject.name = 'tsu-java'
 
 include '0_base'
+include '1_baeldung'
