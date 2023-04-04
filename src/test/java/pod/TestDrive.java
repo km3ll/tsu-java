@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class TestDrive {
 
 	@Test
-	@DisplayName("Smoke test should run")
+	@DisplayName("Smoke test should run successfully")
 	public void smokeTest() {
 		assertTrue(true);
 	}
