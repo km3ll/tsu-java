@@ -20,9 +20,6 @@ test {
     testLogging {
         displayGranularity = 2
         events = ["skipped", "passed", "failed", "standardOut", "standardError"]
-        showStackTraces = true
-        showExceptions = true
-        showCauses = true
     }
 }
 

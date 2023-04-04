@@ -3,7 +3,7 @@
 ## command
 
 ```bash
-./gradlew build
+./gradlew clean build
 ```
 
 ## content
