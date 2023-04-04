@@ -1,18 +1,18 @@
-package pod.pattern.builder.basic;
+package pod.pattern.builder;
 
 /**
  * Reference: https://www.baeldung.com/java-builder-pattern-freebuilder
  */
-public class Employee {
+public class Pet {
 
 	private long id;
 	private String name;
 	private int age;
 
-	private Employee() {
+	private Pet() {
 	}
 
-	private Employee(long id, String name, int age) {
+	private Pet(long id, String name, int age) {
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -51,8 +51,8 @@ public class Employee {
 			return this;
 		}
 
-		public Employee build() {
-			return new Employee(id, name, age);
+		public Pet build() {
+			return new Pet(id, name, age);
 		}
 
 	}

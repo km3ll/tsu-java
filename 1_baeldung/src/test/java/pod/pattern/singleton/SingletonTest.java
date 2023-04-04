@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test;
 class SingletonTest {
 
     @Test
-    @DisplayName("Basic singleton creates one instance")
-    public void basicSingleton_creates_one_instance() {
+    @DisplayName("Basic singleton instances one object")
+    public void basicSingleton_instances_one_object() {
 
         // Given
         BasicSingleton ref1 = BasicSingleton.getInstance();
