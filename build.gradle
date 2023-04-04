@@ -25,3 +25,5 @@ test {
         showCauses = true
     }
 }
+
+build.dependsOn(test)
