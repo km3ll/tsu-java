@@ -8,7 +8,7 @@ public class TestDrive {
 
 	@Test
 	@DisplayName("Smoke test runs successfully")
-	public void smokeTest_runs_successfully() {
+	public void smokeTest_runsSuccessfully() {
 		assertTrue(true);
 	}
 
