@@ -19,7 +19,7 @@ test {
     useJUnitPlatform()
     testLogging {
         displayGranularity = 2
-        events = ["skipped", "passed", "failed", "standardOut", "standardError"]
+        events = ["passed", "failed"]
     }
 }
 
