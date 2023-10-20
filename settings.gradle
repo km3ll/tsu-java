@@ -1,4 +1,9 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
 rootProject.name = 'tsu-java'
 
-include 'starter'
-include '1_baeldung'
+include '041pod'
