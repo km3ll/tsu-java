@@ -1,29 +1,45 @@
 plugins {
-    id 'java'
+    id "io.freefair.lombok" version "8.1.0" apply false
 }
 
-group 'tsu'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+ext {
+    instancioVersion = '3.0.0'
+    jupiterVersion = '5.8.1'
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+allprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'io.freefair.lombok'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation "org.junit.jupiter:junit-jupiter-api:$jupiterVersion"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$jupiterVersion"
+    }
+
+    java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+    tasks.withType(JavaCompile) {
+        options.compilerArgs += ['-Xlint:all', '-Werror', '-Xlint:-serial', '-Xlint:-processing', '-Xlint:-path']
+    }
+
+    tasks.withType(Test) {
+        useJUnitPlatform()
+        testLogging {
+            failFast = true
+            events = ['passed', 'failed']
+        }
+    }
+
 }
 
-test {
-    failFast = true
-    useJUnitPlatform()
-    testLogging {
-        displayGranularity = 2
-        events = ["skipped", "passed", "failed", "standardOut", "standardError"]
-        showStackTraces = true
-        showExceptions = true
-        showCauses = true
+configure(project(':testing')) {
+    dependencies {
+        testImplementation "org.instancio:instancio-junit:$instancioVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:$jupiterVersion"
     }
 }
-
-build.dependsOn(test)

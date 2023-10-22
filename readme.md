@@ -3,12 +3,15 @@
 ## command
 
 ```bash
-./gradlew build
+./gradlew clean build
 ```
 
 ## content
 
 ```
-├─ main
-└─ test
+├─ 042pod
+└─ testing
+   ├── assertions
+   ├── instancio
+   └── parameterized
 ```
