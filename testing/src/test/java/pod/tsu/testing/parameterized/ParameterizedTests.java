@@ -9,6 +9,11 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
+/**
+ * References:
+ * - https://www.baeldung.com/parameterized-tests-junit-5
+ */
+
 public class ParameterizedTests {
 
     private static Stream<Arguments> provideEndpoints() {

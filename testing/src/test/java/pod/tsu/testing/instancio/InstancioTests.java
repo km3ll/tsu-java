@@ -1,12 +1,16 @@
 package pod.tsu.testing.instancio;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.instancio.Random;
 import org.instancio.support.DefaultRandom;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+/**
+ * References:
+ * - https://www.instancio.org/user-guide/#using-supply-to-provide-random-values
+ */
 public class InstancioTests {
 
     private static final Random random = new DefaultRandom();
