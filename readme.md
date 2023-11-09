@@ -17,6 +17,7 @@
 
 ## features
 
+- GitHub Flows
 - JUnit5
 - Lombok
 

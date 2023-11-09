@@ -3,7 +3,6 @@ plugins {
 }
 
 ext {
-    instancioVersion = '3.0.0'
     jupiterVersion = '5.8.1'
 }
 
@@ -37,9 +36,15 @@ allprojects {
 
 }
 
+configure(project(':logging')) {
+    dependencies {
+        implementation "ch.qos.logback:logback-classic:1.4.11"
+    }
+}
+
 configure(project(':testing')) {
     dependencies {
-        testImplementation "org.instancio:instancio-junit:$instancioVersion"
+        testImplementation "org.instancio:instancio-junit:3.0.0"
         testImplementation "org.junit.jupiter:junit-jupiter-params:$jupiterVersion"
     }
 }
