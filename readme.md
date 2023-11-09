@@ -7,6 +7,7 @@
 
 ## modules
 
+- [logging](logging)
 - [testing](testing)
 
 ## commands
