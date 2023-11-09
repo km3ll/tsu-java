@@ -34,6 +34,18 @@ allprojects {
         }
     }
 
+    task unitTests(type: Test) {
+        useJUnitPlatform {
+            includeTags 'Unit'
+        }
+    }
+
+    task integrationTests(type: Test) {
+        useJUnitPlatform {
+            includeTags 'Integration'
+        }
+    }
+
 }
 
 configure(project(':logging')) {

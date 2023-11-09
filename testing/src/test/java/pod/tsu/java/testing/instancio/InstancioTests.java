@@ -5,8 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.instancio.Random;
 import org.instancio.support.DefaultRandom;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("Unit")
 public class InstancioTests {
 
     private static final Random random = new DefaultRandom();

@@ -17,5 +17,6 @@
 
 - `@DisplayName`
 - `@ParameterizedTest`
+- `@Tag`
 - `@Test`
 - `@ValueSource`
