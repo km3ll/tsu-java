@@ -27,5 +27,7 @@ jobs:
         distribution: 'temurin'
     - name: Compile
       run: ./gradlew clean compileJava compileTestJava -x test
-    - name: Run tests
-      run: ./gradlew test
+    - name: Run unit tests
+      run: ./gradlew clean unitTests
+    - name: Run integration tests
+      run: ./gradlew clean integrationTests

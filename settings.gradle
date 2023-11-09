@@ -6,5 +6,5 @@ pluginManagement {
 
 rootProject.name = 'tsu-java'
 
-include '041pod'
+include 'logging'
 include 'testing'

@@ -1,8 +1,9 @@
-package pod.tsu.testing.assertions;
+package pod.tsu.java.testing.assertions;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pod.tsu.testing.domain.Person;
+import pod.tsu.java.testing.domain.Person;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("Unit")
 public class AssertionsTests {
 
     @Test
