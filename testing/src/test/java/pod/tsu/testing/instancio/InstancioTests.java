@@ -7,10 +7,6 @@ import org.instancio.support.DefaultRandom;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-/**
- * References:
- * - https://www.instancio.org/user-guide/#using-supply-to-provide-random-values
- */
 public class InstancioTests {
 
     private static final Random random = new DefaultRandom();

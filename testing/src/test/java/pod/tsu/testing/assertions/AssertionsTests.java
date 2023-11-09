@@ -10,11 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * References:
- * - https://www.baeldung.com/java-testing-single-assert-multiple-properties
- * - https://www.javaguides.net/2018/09/junit-5-assertall-example.html
- */
 public class AssertionsTests {
 
     @Test
