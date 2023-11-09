@@ -9,7 +9,7 @@
 
     # File appender
     <appender name="fileout" class="ch.qos.logback.core.FileAppender">
-        <file>logs/application.log</file>
+        <file>logs/slf4j-application.log</file>
         <append>false</append>
         <encoder>
             # Pattern of log message for file appender

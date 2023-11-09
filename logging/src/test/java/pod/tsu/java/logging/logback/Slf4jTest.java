@@ -12,11 +12,11 @@ public class Slf4jTest {
     private final Logger logger = LoggerFactory.getLogger(Slf4jTest.class);
 
     @Test
-    @DisplayName("Logger logs INFO and DEBUG messages")
+    @DisplayName("SLF4J logger writes messages")
     public void logger_logsMessages() {
 
-        logger.info("Info message");
-        logger.debug("Debug message");
+        logger.info("Message");
+        logger.debug("Message");
 
     }
 
