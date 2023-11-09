@@ -1,4 +1,4 @@
-package pod.tsu.testing.parameterized;
+package pod.tsu.java.testing.parameterized;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 

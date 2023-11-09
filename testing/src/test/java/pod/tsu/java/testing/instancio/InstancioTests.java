@@ -1,4 +1,4 @@
-package pod.tsu.testing.instancio;
+package pod.tsu.java.testing.instancio;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 

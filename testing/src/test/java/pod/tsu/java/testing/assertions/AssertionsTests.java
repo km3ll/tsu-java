@@ -1,8 +1,8 @@
-package pod.tsu.testing.assertions;
+package pod.tsu.java.testing.assertions;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pod.tsu.testing.domain.Person;
+import pod.tsu.java.testing.domain.Person;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
