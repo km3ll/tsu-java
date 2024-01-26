@@ -52,7 +52,6 @@ public class PredicateTest {
         assertTrue(isLongerThan3.test("Hakuna"));
         assertFalse(isLongerThan10.test("Hakuna"));
 
-
     }
 
 }
