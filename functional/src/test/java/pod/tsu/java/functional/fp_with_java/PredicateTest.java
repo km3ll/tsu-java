@@ -18,8 +18,8 @@ public class PredicateTest {
     private final Predicate<Integer> isNegative = (x) -> x < 0;
 
     @Test
-    @DisplayName("Run 'test' method")
-    void predicate_test() {
+    @DisplayName("Used with test method")
+    void predicate_withTest() {
 
         assertFalse(isNegative.test(50));
         assertTrue(isNegative.test(-20));
@@ -27,8 +27,8 @@ public class PredicateTest {
     }
 
     @Test
-    @DisplayName("Use in a filter function")
-    void predicate_inFilter() {
+    @DisplayName("Used with filter function")
+    void predicate_withFilter() {
 
         List<Integer> negatives = Stream.of(10, -20, -30, 40, 50)
             .filter(isNegative)
@@ -39,8 +39,8 @@ public class PredicateTest {
     }
 
     @Test
-    @DisplayName("Use with a higher-order function")
-    void predicate_hof() {
+    @DisplayName("Used with higher-order function")
+    void predicate_withHOF() {
 
         Function<Integer, Predicate<String>> factory = (minLength) -> {
             return (str) -> str.length() > minLength;
