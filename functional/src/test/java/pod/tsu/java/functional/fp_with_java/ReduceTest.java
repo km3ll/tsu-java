@@ -20,7 +20,9 @@ public class ReduceTest {
         // Given
         Integer initialValue = 0;
         BinaryOperator<Integer> operator = (acc, element) -> {
-            return acc + element;
+            Integer result = acc + element;
+            System.out.printf("acc: %d + elem: %d = %d %n", acc, element, result);
+            return result;
         };
 
         // When
