@@ -48,6 +48,9 @@ allprojects {
 
 }
 
+configure(project(':functional')) {
+}
+
 configure(project(':logging')) {
     dependencies {
         implementation 'ch.qos.logback:logback-classic:1.4.11'
