@@ -27,7 +27,7 @@ public class PredicateTest {
     }
 
     @Test
-    @DisplayName("Used with filter function")
+    @DisplayName("Used with stream's filter function")
     void predicate_withFilter() {
 
         List<Integer> negatives = Stream.of(10, -20, -30, 40, 50)
