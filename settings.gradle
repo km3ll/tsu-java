@@ -6,5 +6,6 @@ pluginManagement {
 
 rootProject.name = 'tsu-java'
 
+include 'functional'
 include 'logging'
 include 'testing'

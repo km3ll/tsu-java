@@ -48,11 +48,15 @@ allprojects {
 
 }
 
+configure(project(':functional')) {
+}
+
 configure(project(':logging')) {
     dependencies {
         implementation 'ch.qos.logback:logback-classic:1.4.11'
         implementation 'org.apache.logging.log4j:log4j-api:2.6.2'
         implementation 'org.apache.logging.log4j:log4j-core:2.6.2'
+        implementation 'com.datadoghq:datadog-api-client:2.18.0'
     }
 }
 

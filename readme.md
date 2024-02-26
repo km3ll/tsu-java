@@ -7,6 +7,7 @@
 
 ## modules
 
+- [functional](functional)
 - [logging](logging)
 - [testing](testing)
 
