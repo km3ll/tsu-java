@@ -28,6 +28,6 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build project 'testing'
+    - name: Build
       working-directory: ./testing
       run: ./gradlew clean build
