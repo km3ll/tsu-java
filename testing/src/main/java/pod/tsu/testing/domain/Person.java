@@ -1,4 +1,4 @@
-package pod.tsu.java.testing.domain;
+package pod.tsu.testing.domain;
 
 import lombok.Builder;
 import lombok.Getter;
