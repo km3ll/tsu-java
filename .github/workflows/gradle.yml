@@ -14,20 +14,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  Project-Testing:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
+
     - name: Set up JDK 17
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: Compile
-      run: ./gradlew clean compileJava compileTestJava -x test
-    - name: Run unit tests
-      run: ./gradlew clean unitTests
-    - name: Run integration tests
-      run: ./gradlew clean integrationTests
+
+    - name: Build
+      working-directory: ./testing
+      run: ./gradlew clean build
