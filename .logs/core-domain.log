@@ -1,0 +1,11 @@
+2021-10-13 06:36:03,995 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method 1
+2021-10-13 06:36:04,043 [me.dwarrowdelf.core.App.main()] INFO  App:14 - Running the main method 2
+2021-10-13 06:36:29,601 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method 1
+2021-10-13 06:36:29,685 [me.dwarrowdelf.core.App.main()] INFO  App:14 - Running the main method 2
+2021-10-13 06:38:03 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method 1
+2021-10-13 06:38:03 [me.dwarrowdelf.core.App.main()] INFO  App:14 - Running the main method 2
+2021-10-13 06:38:48 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method 1
+2021-10-13 06:38:48 [me.dwarrowdelf.core.App.main()] INFO  App:14 - Running the main method 2
+2021-10-13 06:40:32 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method 1
+2021-10-13 06:40:32 [me.dwarrowdelf.core.App.main()] INFO  App:14 - Running the main method 2
+2022-02-01 20:34:50 [me.dwarrowdelf.core.App.main()] INFO  App:13 - Running the main method
