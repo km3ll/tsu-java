@@ -1,4 +1,4 @@
-package refactoring_guru.factory_method.example.buttons;
+package refactoring_guru.m01_creational.factory_method.example.buttons;
 
 import javax.swing.*;
 import java.awt.*;
@@ -40,4 +40,5 @@ public class WindowsButton implements Button {
             }
         });
     }
+
 }

@@ -1,13 +1,14 @@
-package refactoring_guru.factory_method.example;
+package refactoring_guru.m01_creational.factory_method.example;
 
-import refactoring_guru.factory_method.example.factory.Dialog;
-import refactoring_guru.factory_method.example.factory.HtmlDialog;
-import refactoring_guru.factory_method.example.factory.WindowsDialog;
+import refactoring_guru.m01_creational.factory_method.example.factory.Dialog;
+import refactoring_guru.m01_creational.factory_method.example.factory.HtmlDialog;
+import refactoring_guru.m01_creational.factory_method.example.factory.WindowsDialog;
 
 /**
  * Demo class. Everything comes together here.
  */
 public class Demo {
+
     private static Dialog dialog;
 
     public static void main(String[] args) {
@@ -20,7 +21,9 @@ public class Demo {
      * environment options.
      */
     static void configure() {
-        if (System.getProperty("os.name").equals("Windows 10")) {
+        String osName = System.getProperty("os.name");
+        System.out.println("OS Name: " + osName);
+        if (osName.equals("Windows 10")) {
             dialog = new WindowsDialog();
         } else {
             dialog = new HtmlDialog();
@@ -35,4 +38,5 @@ public class Demo {
     static void runBusinessLogic() {
         dialog.renderWindow();
     }
+
 }

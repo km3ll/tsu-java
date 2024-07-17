@@ -1,4 +1,4 @@
-package refactoring_guru.factory_method.example.buttons;
+package refactoring_guru.m01_creational.factory_method.example.buttons;
 
 /**
  * HTML button implementation.
@@ -13,4 +13,5 @@ public class HtmlButton implements Button {
     public void onClick() {
         System.out.println("Click! Button says - 'Hello World!'");
     }
+
 }

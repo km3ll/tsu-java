@@ -50,14 +50,14 @@ Here's a style guide which might help you to keep your changes consistent with o
 5. Group classes into sub-packages. It helps people to understand dependencies of a class by glancing over its imports. Example:
 
     ```java
-    package refactoring_guru.factory_method.example.buttons;
+    package refactoring_guru.m01_creational.factory_method.example.buttons;
 
     class Button {
     ...
     ```
 
     ```java
-    package refactoring_guru.factory_method.example.factories;
+    package refactoring_guru.m01_creational.factory_method.example.factories;
 
     import Button;
 

@@ -1,6 +1,6 @@
-package refactoring_guru.factory_method.example.factory;
+package refactoring_guru.m01_creational.factory_method.example.factory;
 
-import refactoring_guru.factory_method.example.buttons.Button;
+import refactoring_guru.m01_creational.factory_method.example.buttons.Button;
 
 /**
  * Base factory class. Note that "factory" is merely a role for the class. It
@@ -10,8 +10,6 @@ import refactoring_guru.factory_method.example.buttons.Button;
 public abstract class Dialog {
 
     public void renderWindow() {
-        // ... other code ...
-
         Button okButton = createButton();
         okButton.render();
     }
@@ -21,4 +19,5 @@ public abstract class Dialog {
      * objects.
      */
     public abstract Button createButton();
+
 }
