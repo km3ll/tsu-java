@@ -1,5 +1,6 @@
 package refactoring_guru.m01_creational.factory_method.example;
 
+import refactoring_guru.m01_creational.factory_method.example.factory.ConsoleDialog;
 import refactoring_guru.m01_creational.factory_method.example.factory.Dialog;
 import refactoring_guru.m01_creational.factory_method.example.factory.HtmlDialog;
 import refactoring_guru.m01_creational.factory_method.example.factory.WindowsDialog;
@@ -22,9 +23,10 @@ public class Demo {
      */
     static void configure() {
         String osName = System.getProperty("os.name");
-        System.out.println("OS Name: " + osName);
         if (osName.equals("Windows 10")) {
             dialog = new WindowsDialog();
+        } else if (osName.equals("Linux")) {
+            dialog = new ConsoleDialog();
         } else {
             dialog = new HtmlDialog();
         }
