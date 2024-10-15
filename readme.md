@@ -1,5 +1,6 @@
 # tsu-java
 
-- [design-patterns](design-patterns)
-- [jdbc-tutorial](jdbc-tutorial)
-- [testing](testing)
+- [book-design-patterns](book-design-patterns)
+- [learn-java-8](learn-java-8)
+- [learn-jdbc](learn-jdbc)
+- [learn-testing](learn-testing)
