@@ -1,4 +1,5 @@
-# Java 8 for Professionals
+# learn-basics
+
 This is the repository for the LinkedIn Learning course Java 8 for Professionals. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![Java 8 for Professionals][lil-thumbnail-url] 

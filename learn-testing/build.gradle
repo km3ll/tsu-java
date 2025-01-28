@@ -3,8 +3,9 @@ plugins {
     id 'io.freefair.lombok' version '8.1.0' apply true
 }
 
-group = 'org.example'
+group = 'tsu.pod.java'
 version = '1.0-SNAPSHOT'
+name = 'learn-testing'
 
 repositories {
     mavenCentral()
