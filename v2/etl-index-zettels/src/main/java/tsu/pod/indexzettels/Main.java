@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        var path = "";
+        var path = "nier";
         index(path);
     }
 
@@ -20,33 +20,28 @@ public class Main {
         File[] files = FileUtils.listFiles(path);
         for (File file : files) {
             if (file.isDirectory()) {
-                System.out.println("[Folder] " + file.getName());
                 index(file.getAbsolutePath());
             } else {
                 Zettel zettel = Zettel.of(file);
                 if (zettel.isIndex()) {
                     file.delete();
-                    try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-                        var lines = zettel.getContent();
-                        for (int i = 0; i < lines.size(); i++) {
-                            writer.write(lines.get(i));
-                            if (i < lines.size()-1) {
-                                writer.newLine(); // Add a new line after each entry
-                            }
-
+                }
+                System.out.println(zettel);
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+                    var lines = zettel.getContent();
+                    for (int i = 0; i < lines.size(); i++) {
+                        writer.write(lines.get(i));
+                        if (i < lines.size()-1) {
+                            writer.newLine(); // Add a new line after each entry
                         }
-                        System.out.println("File created successfully: " + file.getAbsolutePath());
-                    } catch (IOException e) {
-                        System.out.println("Error writing file: " + e.getMessage());
+
                     }
+                    //System.out.println("File created successfully: " + file.getAbsolutePath());
+                } catch (IOException e) {
+                    System.out.println("Error writing file: " + e.getMessage());
                 }
             }
         }
-    }
-
-    private static void writeIndex(File file) {
-        Zettel zettel = Zettel.of(file);
-        System.out.println(zettel);
     }
 
 }

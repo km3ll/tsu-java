@@ -2,6 +2,7 @@ package tsu.pod.indexzettels.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.apache.commons.lang3.StringUtils;
 import tsu.pod.indexzettels.infra.FileUtils;
 import tsu.pod.indexzettels.infra.exception.PodException;
 
@@ -21,7 +22,7 @@ public class Zettel {
     private static final String LINK_POSFIX = "]]";
     private static final String TAG_DELIMITER = " ";
     private static final String TAG_PREFIX = "#";
-    private static final String TAG_SEPARATOR = "---";
+    private static final String TAG_SEPARATOR = "--- ";
     private static final String TITTLE_PREFIX = "# ";
 
     private String name;
@@ -35,6 +36,8 @@ public class Zettel {
         List<String> content = new ArrayList<>();
         if (isIndex) {
             content.addAll(buildContentOfIndex(file));
+        } else {
+            content.addAll(buildContentOfZettel(file));
         }
 
         return new Zettel(name, isIndex, content);
@@ -79,13 +82,35 @@ public class Zettel {
         return content;
     }
 
+    private static List<String> buildContentOfZettel(File file) {
+        List<String> content = new ArrayList<>();
+        List<String> lines = FileUtils.readLines(file);
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).startsWith(TAG_SEPARATOR)) {
+                if (!StringUtils.isEmpty(lines.get(i-1))) {
+                    content.add(EMPTY_LINE);
+                }
+                break;
+            }
+            content.add(lines.get(i));
+            if (i == lines.size()-1) {
+                if (!StringUtils.isEmpty(lines.get(i))) {
+                    content.add(EMPTY_LINE);
+                }
+            }
+        }
+        content.add(TAG_SEPARATOR);
+        content.add(EMPTY_LINE);
+        content.add(String.join(TAG_DELIMITER, getTags(file)));
+        return content;
+    }
+
     private static List<String> getDirectoryFileNames(File file) {
         List<String> fileNames = new ArrayList<>();
         Arrays.stream(FileUtils.listFiles(file.getAbsolutePath()))
             .map(raw -> formatFileName(raw.getName()))
             .filter(formatted -> !formatted.equals(file.getName()))
             .forEach(fileNames::add);
-        ;
         return fileNames;
     }
 
