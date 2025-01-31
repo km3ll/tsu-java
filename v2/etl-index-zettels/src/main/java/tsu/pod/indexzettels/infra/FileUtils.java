@@ -102,6 +102,7 @@ public abstract class FileUtils {
         Arrays.stream(files)
             .map(raw -> formatName(raw.getName()))
             .filter(formatted -> !formatted.equals(file.getName()))
+            .sorted()
             .forEach(fileNames::add);
         return fileNames;
     }
