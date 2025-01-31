@@ -4,7 +4,5 @@
 
 ```bash
 mvn clean package
-
-# usage
 java -jar ./target/etl-index-zettels-1.0.jar <folder-path>
 ```
