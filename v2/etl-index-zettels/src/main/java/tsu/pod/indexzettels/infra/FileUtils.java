@@ -45,7 +45,7 @@ public abstract class FileUtils {
             fileList.addAll(Arrays.asList(files));
         }
         return fileList.stream()
-            .filter(fileNameIsAllowed)
+            .filter(fileIsAllowed)
             .toList();
     }
 
@@ -118,7 +118,7 @@ public abstract class FileUtils {
         return fileNames;
     }
 
-    private static final Predicate<File> fileNameIsAllowed = file -> {
+    private static final Predicate<File> fileIsAllowed = file -> {
         return !ignoredFileNames.contains(file.getName().toLowerCase());
     };
 
