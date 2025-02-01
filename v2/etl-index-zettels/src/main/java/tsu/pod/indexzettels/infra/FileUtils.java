@@ -23,6 +23,7 @@ public abstract class FileUtils {
     public static void processFolder(String path) {
         List<File> files = FileUtils.readFiles(path);
         for (File file : files) {
+            System.out.println("[pod] File: " + file);
             if (file.isDirectory()) {
                 processFolder(file.getAbsolutePath());
             } else {

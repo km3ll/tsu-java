@@ -9,6 +9,7 @@ public class Main {
             System.out.println("Usage: java -jar etl-index-zettels-1.0.jar <folder-path>");
             System.exit(1);
         }
+        System.out.println("[pod] Processing folder: " + args[0]);
         FileUtils.processFolder(args[0]);
     }
 }
