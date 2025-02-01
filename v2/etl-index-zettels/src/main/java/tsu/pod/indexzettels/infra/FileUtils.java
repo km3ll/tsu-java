@@ -11,13 +11,17 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
+
 import tsu.pod.indexzettels.infra.exception.PodException;
 import tsu.pod.indexzettels.model.Zettel;
 
 public abstract class FileUtils {
 
+    private static final List<String> ignoredFileNames = List.of(".ds_store");
+
     public static void processFolder(String path) {
-        File[] files = FileUtils.readFiles(path);
+        List<File> files = FileUtils.readFiles(path);
         for (File file : files) {
             if (file.isDirectory()) {
                 processFolder(file.getAbsolutePath());
@@ -27,7 +31,8 @@ public abstract class FileUtils {
         }
     }
 
-    public static File[] readFiles(String path) throws PodException {
+    public static List<File> readFiles(String path) throws PodException {
+        List<File> fileList = new ArrayList<>();
         File directory = new File(path);
         if (!directory.exists()) {
             throw new PodException("Path does not exist: " + path);
@@ -35,7 +40,13 @@ public abstract class FileUtils {
         if (!directory.isDirectory()) {
             throw new PodException("Path is not a directory: " + path);
         }
-        return directory.listFiles();
+        File[] files = directory.listFiles();
+        if (files != null) {
+            fileList.addAll(Arrays.asList(files));
+        }
+        return fileList.stream()
+            .filter(fileNameIsAllowed)
+            .toList();
     }
 
     public static void processFile(File file) {
@@ -98,13 +109,17 @@ public abstract class FileUtils {
 
     public static List<String> getNamesInDirectory(File file) {
         List<String> fileNames = new ArrayList<>();
-        File[] files = readFiles(file.getAbsolutePath());
-        Arrays.stream(files)
+        List<File> files = readFiles(file.getAbsolutePath());
+        files.stream()
             .map(raw -> formatName(raw.getName()))
             .filter(formatted -> !formatted.equals(file.getName()))
             .sorted()
             .forEach(fileNames::add);
         return fileNames;
     }
+
+    private static final Predicate<File> fileNameIsAllowed = file -> {
+        return !ignoredFileNames.contains(file.getName().toLowerCase());
+    };
 
 }
