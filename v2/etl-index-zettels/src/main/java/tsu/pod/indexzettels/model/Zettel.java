@@ -14,10 +14,12 @@ import tsu.pod.indexzettels.infra.exception.PodException;
 @Getter
 public class Zettel {
 
+    private static final String DASH = "-";
     private static final String EMPTY_LINE = "";
     private static final String INDEX_LINE_PREFIX = "- ";
     private static final String LINK_PREFIX = "[[";
     private static final String LINK_POSFIX = "]]";
+    private static final String SPACE = " ";
     private static final String TAG_DELIMITER = " ";
     private static final String TAG_PREFIX = "#";
     private static final String TAG_SEPARATOR = "--- ";
@@ -103,8 +105,13 @@ public class Zettel {
         return FileUtils.getFilePath(file)
             .stream()
             .filter(name -> !name.endsWith(".md"))
-            .map(name -> TAG_PREFIX + name)
+            .map(Zettel::formatTagName)
             .toList();
+    }
+
+    private static String formatTagName(String name) {
+        String tagName = name.toLowerCase().replaceAll(SPACE, DASH);
+        return TAG_PREFIX + tagName;
     }
 
     @Override
