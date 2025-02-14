@@ -57,10 +57,9 @@ public abstract class FileUtils {
 
     public static void processFile(File file) throws Exception {
         logger.debug("File size: {} bytes, path: : {}", file.length(), file.getAbsolutePath());
-        //File backup = createBackup(file);
+        File backup = createBackup(file);
         Zettel zettel = Zettel.of(file);
         saveFile(file, zettel);
-        /*
         long backupSize = backup.length();
         long updatedSize = file.length();
         if (updatedSize >= backupSize) {
@@ -69,7 +68,6 @@ public abstract class FileUtils {
             logger.error("Updated size: {} is lower than original size: {}. Restoring backup from file: {}", updatedSize, backupSize, backup.getAbsoluteFile());
             //restoreBackup(backup);
         }
-         */
     }
 
     private static File createBackup(File file) throws Exception{
