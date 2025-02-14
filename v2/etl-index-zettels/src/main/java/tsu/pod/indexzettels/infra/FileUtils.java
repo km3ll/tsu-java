@@ -57,17 +57,19 @@ public abstract class FileUtils {
 
     public static void processFile(File file) throws Exception {
         logger.debug("File size: {} bytes, path: : {}", file.length(), file.getAbsolutePath());
-        File backup = createBackup(file);
+        //File backup = createBackup(file);
         Zettel zettel = Zettel.of(file);
         saveFile(file, zettel);
+        /*
         long backupSize = backup.length();
         long updatedSize = file.length();
         if (updatedSize >= backupSize) {
             deleteBackup(backup);
         } else {
             logger.error("Updated size: {} is lower than original size: {}. Restoring backup from file: {}", updatedSize, backupSize, backup.getAbsoluteFile());
-            restoreBackup(backup);
+            //restoreBackup(backup);
         }
+         */
     }
 
     private static File createBackup(File file) throws Exception{
@@ -139,6 +141,7 @@ public abstract class FileUtils {
         List<String> fileNames = new ArrayList<>();
         List<File> files = readFiles(file.getAbsolutePath());
         files.stream()
+            .filter(unformatted -> !unformatted.getName().contains("_backup"))
             .map(raw -> formatName(raw.getName()))
             .filter(formatted -> !formatted.equals(file.getName()))
             .sorted()
