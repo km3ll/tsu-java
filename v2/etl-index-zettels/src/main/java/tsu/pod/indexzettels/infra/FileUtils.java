@@ -13,20 +13,25 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import tsu.pod.indexzettels.Main;
 import tsu.pod.indexzettels.infra.exception.PodException;
 import tsu.pod.indexzettels.model.Zettel;
 
 public abstract class FileUtils {
 
+    private static final Logger logger = LoggerFactory.getLogger(FileUtils.class);
     private static final List<String> ignoredFileNames = List.of(".ds_store");
 
-    public static void processFolder(String path) {
+    public static void processFolder(String path) throws Exception {
         List<File> files = FileUtils.readFiles(path);
         for (File file : files) {
-            System.out.println("[pod] File: " + file);
             if (file.isDirectory()) {
+                logger.debug("Directory: {}", file);
                 processFolder(file.getAbsolutePath());
             } else {
+                logger.debug("File: {}", file);
                 processFile(file);
             }
         }
@@ -50,19 +55,40 @@ public abstract class FileUtils {
             .toList();
     }
 
-    public static void processFile(File file) {
+    public static void processFile(File file) throws Exception {
+        logger.debug("File size: {} bytes, path: : {}", file.length(), file.getAbsolutePath());
+        File backup = createBackup(file);
         Zettel zettel = Zettel.of(file);
+        saveFile(file, zettel);
+        long backupSize = backup.length();
+        long updatedSize = file.length();
+        if (updatedSize >= backupSize) {
+            deleteBackup(backup);
+        } else {
+            logger.error("Updated size: {} is lower than original size: {}. Restoring backup from file: {}", updatedSize, backupSize, backup.getAbsoluteFile());
+            restoreBackup(backup);
+        }
+    }
+
+    private static File createBackup(File file) throws Exception{
+        String path = file.getAbsolutePath().replace(".md", "_backup.md");
+        File backup = new File(path);
+        org.apache.commons.io.FileUtils.copyFile(file, backup);
+        return backup;
+    }
+
+    public static void saveFile(File file, Zettel zettel) throws Exception {
         deleteFile(file);
         writeInFile(file, zettel);
     }
 
-    public static void deleteFile(File file) {
+    public static void deleteFile(File file) throws Exception {
         if (!file.delete()) {
-            System.out.println("Error deleting file: " + file.getAbsolutePath());
+            throw new Exception("Error deleting file: " + file.getAbsolutePath());
         }
     }
 
-    public static void writeInFile(File file, Zettel zettel) {
+    public static void writeInFile(File file, Zettel zettel) throws Exception {
         List<String> lines = zettel.getContent();
         int lastLineIndex = lines.size() - 1;
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
@@ -72,8 +98,9 @@ public abstract class FileUtils {
                     writer.newLine(); // Add a new line after each entry
                 }
             }
-        } catch (IOException e) {
-            System.out.println("Error writing file: " + e.getMessage());
+        } catch (IOException ex) {
+            logger.error("Error writing file: {}", file.getAbsoluteFile(), ex);
+            throw new Exception(ex);
         }
     }
 
@@ -122,5 +149,17 @@ public abstract class FileUtils {
     private static final Predicate<File> fileIsAllowed = file -> {
         return !ignoredFileNames.contains(file.getName().toLowerCase());
     };
+
+    private static void deleteBackup(File file) throws Exception {
+        deleteFile(file);
+    }
+
+    private static void restoreBackup(File backup) throws Exception{
+        String path = backup.getAbsolutePath().replace("_backup.md", ".md");
+        File restored = new File(path);
+        deleteFile(restored);
+        org.apache.commons.io.FileUtils.copyFile(backup, restored);
+        deleteFile(backup);
+    }
 
 }
