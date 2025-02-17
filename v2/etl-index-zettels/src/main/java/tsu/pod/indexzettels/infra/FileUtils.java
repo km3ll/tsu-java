@@ -66,7 +66,7 @@ public abstract class FileUtils {
             deleteBackup(backup);
         } else {
             logger.error("Updated size: {} is lower than original size: {}. Restoring backup from file: {}", updatedSize, backupSize, backup.getAbsoluteFile());
-            restoreBackup(backup);
+            //restoreBackup(backup);
         }
     }
 
@@ -139,6 +139,7 @@ public abstract class FileUtils {
         List<String> fileNames = new ArrayList<>();
         List<File> files = readFiles(file.getAbsolutePath());
         files.stream()
+            .filter(unformatted -> !unformatted.getName().contains("_backup"))
             .map(raw -> formatName(raw.getName()))
             .filter(formatted -> !formatted.equals(file.getName()))
             .sorted()
