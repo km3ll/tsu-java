@@ -3,6 +3,7 @@
 ## v2
 
 - [etl-index-zettels](v2/etl-index-zettels)
+- [book-design-patterns](v2/book-design-patterns)
 
 ## v1
 
