@@ -18,7 +18,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>tsu.pod.designPatterns.Main</mainClass>
+                  <mainClass>tsu.pod.designpatterns.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
