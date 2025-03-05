@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>tsu.pod.designpatterns</groupId>
+    <groupId>tsu.pod.design_patterns</groupId>
     <artifactId>book-design-patterns</artifactId>
     <version>1.0</version>
 
@@ -63,7 +63,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation = "org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>tsu.pod.designpatterns.Main</mainClass>
+                                    <mainClass>tsu.pod.design_patterns.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

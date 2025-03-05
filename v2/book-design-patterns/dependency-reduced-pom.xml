@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>tsu.pod.designpatterns</groupId>
+  <groupId>tsu.pod.design_patterns</groupId>
   <artifactId>book-design-patterns</artifactId>
   <version>1.0</version>
   <build>
@@ -18,7 +18,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>tsu.pod.designpatterns.Main</mainClass>
+                  <mainClass>tsu.pod.design_patterns.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
