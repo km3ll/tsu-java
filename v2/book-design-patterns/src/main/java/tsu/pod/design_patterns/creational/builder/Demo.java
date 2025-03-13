@@ -1,10 +1,10 @@
-package refactoring_guru.builder.example;
+package tsu.pod.design_patterns.creational.builder;
 
-import refactoring_guru.builder.example.builders.CarBuilder;
-import refactoring_guru.builder.example.builders.CarManualBuilder;
-import refactoring_guru.builder.example.cars.Car;
-import refactoring_guru.builder.example.cars.Manual;
-import refactoring_guru.builder.example.director.Director;
+import tsu.pod.design_patterns.creational.builder.builders.CarBuilder;
+import tsu.pod.design_patterns.creational.builder.builders.CarManualBuilder;
+import tsu.pod.design_patterns.creational.builder.cars.Car;
+import tsu.pod.design_patterns.creational.builder.cars.Manual;
+import tsu.pod.design_patterns.creational.builder.director.Director;
 
 /**
  * Demo class. Everything comes together here.

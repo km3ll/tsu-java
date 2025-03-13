@@ -1,9 +1,9 @@
-package refactoring_guru.builder.example.cars;
+package tsu.pod.design_patterns.creational.builder.cars;
 
-import refactoring_guru.builder.example.components.Engine;
-import refactoring_guru.builder.example.components.GPSNavigator;
-import refactoring_guru.builder.example.components.Transmission;
-import refactoring_guru.builder.example.components.TripComputer;
+import tsu.pod.design_patterns.creational.builder.components.Engine;
+import tsu.pod.design_patterns.creational.builder.components.GPSNavigator;
+import tsu.pod.design_patterns.creational.builder.components.Transmission;
+import tsu.pod.design_patterns.creational.builder.components.TripComputer;
 
 /**
  * Car manual is another product. Note that it does not have the same ancestor

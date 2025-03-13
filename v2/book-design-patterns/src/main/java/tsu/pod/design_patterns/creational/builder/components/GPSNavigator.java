@@ -1,9 +1,10 @@
-package refactoring_guru.builder.example.components;
+package tsu.pod.design_patterns.creational.builder.components;
 
 /**
  * Just another feature of a car.
  */
 public class GPSNavigator {
+
     private String route;
 
     public GPSNavigator() {
@@ -17,4 +18,5 @@ public class GPSNavigator {
     public String getRoute() {
         return route;
     }
+
 }

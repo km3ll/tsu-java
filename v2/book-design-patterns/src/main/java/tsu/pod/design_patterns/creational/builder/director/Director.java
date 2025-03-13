@@ -1,11 +1,11 @@
-package refactoring_guru.builder.example.director;
+package tsu.pod.design_patterns.creational.builder.director;
 
-import refactoring_guru.builder.example.builders.Builder;
-import refactoring_guru.builder.example.cars.CarType;
-import refactoring_guru.builder.example.components.Engine;
-import refactoring_guru.builder.example.components.GPSNavigator;
-import refactoring_guru.builder.example.components.Transmission;
-import refactoring_guru.builder.example.components.TripComputer;
+import tsu.pod.design_patterns.creational.builder.builders.Builder;
+import tsu.pod.design_patterns.creational.builder.cars.CarType;
+import tsu.pod.design_patterns.creational.builder.components.Engine;
+import tsu.pod.design_patterns.creational.builder.components.GPSNavigator;
+import tsu.pod.design_patterns.creational.builder.components.Transmission;
+import tsu.pod.design_patterns.creational.builder.components.TripComputer;
 
 /**
  * Director defines the order of building steps. It works with a builder object

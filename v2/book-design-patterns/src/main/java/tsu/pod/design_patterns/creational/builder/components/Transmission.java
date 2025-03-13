@@ -1,4 +1,4 @@
-package refactoring_guru.builder.example.components;
+package tsu.pod.design_patterns.creational.builder.components;
 
 /**
  * Just another feature of a car.

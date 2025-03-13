@@ -1,6 +1,6 @@
-package refactoring_guru.builder.example.components;
+package tsu.pod.design_patterns.creational.builder.components;
 
-import refactoring_guru.builder.example.cars.Car;
+import tsu.pod.design_patterns.creational.builder.cars.Car;
 
 /**
  * Just another feature of a car.
