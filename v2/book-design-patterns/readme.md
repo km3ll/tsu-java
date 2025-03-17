@@ -16,9 +16,11 @@ mvn clean package
 
 ```
 design_patterns
-└── creational
-    ├── abstract_factory
-    ├── builder
-    ├── factory_method
-    └── prototype
+├── creational
+|   ├── abstract_factory
+|   ├── builder
+|   ├── factory_method
+|   ├── prototype
+|   └── singleton
+└── structural
 ```
