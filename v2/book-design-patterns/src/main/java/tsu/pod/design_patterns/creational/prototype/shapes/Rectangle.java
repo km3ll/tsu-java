@@ -1,6 +1,7 @@
-package refactoring_guru.prototype.example.shapes;
+package tsu.pod.design_patterns.creational.prototype.shapes;
 
 public class Rectangle extends Shape {
+
     public int width;
     public int height;
 
@@ -26,4 +27,5 @@ public class Rectangle extends Shape {
         Rectangle shape2 = (Rectangle) object2;
         return shape2.width == width && shape2.height == height;
     }
+
 }

@@ -1,4 +1,4 @@
-package refactoring_guru.prototype.example.shapes;
+package tsu.pod.design_patterns.creational.prototype.shapes;
 
 import java.util.Objects;
 

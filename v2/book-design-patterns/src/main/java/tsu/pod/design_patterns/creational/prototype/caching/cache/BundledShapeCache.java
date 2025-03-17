@@ -1,13 +1,14 @@
-package refactoring_guru.prototype.caching.cache;
+package tsu.pod.design_patterns.creational.prototype.caching.cache;
 
-import refactoring_guru.prototype.example.shapes.Circle;
-import refactoring_guru.prototype.example.shapes.Rectangle;
-import refactoring_guru.prototype.example.shapes.Shape;
+import tsu.pod.design_patterns.creational.prototype.shapes.Circle;
+import tsu.pod.design_patterns.creational.prototype.shapes.Rectangle;
+import tsu.pod.design_patterns.creational.prototype.shapes.Shape;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class BundledShapeCache {
+
     private Map<String, Shape> cache = new HashMap<>();
 
     public BundledShapeCache() {

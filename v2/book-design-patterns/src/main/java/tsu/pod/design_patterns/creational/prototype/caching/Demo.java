@@ -1,7 +1,7 @@
-package refactoring_guru.prototype.caching;
+package tsu.pod.design_patterns.creational.prototype.caching;
 
-import refactoring_guru.prototype.caching.cache.BundledShapeCache;
-import refactoring_guru.prototype.example.shapes.Shape;
+import tsu.pod.design_patterns.creational.prototype.caching.cache.BundledShapeCache;
+import tsu.pod.design_patterns.creational.prototype.shapes.Shape;
 
 public class Demo {
     public static void main(String[] args) {

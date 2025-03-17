@@ -1,8 +1,8 @@
-package refactoring_guru.prototype.example;
+package tsu.pod.design_patterns.creational.prototype;
 
-import refactoring_guru.prototype.example.shapes.Circle;
-import refactoring_guru.prototype.example.shapes.Rectangle;
-import refactoring_guru.prototype.example.shapes.Shape;
+import tsu.pod.design_patterns.creational.prototype.shapes.Circle;
+import tsu.pod.design_patterns.creational.prototype.shapes.Rectangle;
+import tsu.pod.design_patterns.creational.prototype.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.List;
