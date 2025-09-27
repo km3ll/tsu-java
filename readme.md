@@ -2,7 +2,7 @@
 
 ## projects
 
-- [base-app](current/base-app)
+- [base-app](projects/base-app)
 
 ## backup
 
