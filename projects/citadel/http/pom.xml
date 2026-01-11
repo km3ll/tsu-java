@@ -10,7 +10,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>http-api</artifactId>
+    <artifactId>http</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>

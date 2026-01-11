@@ -15,6 +15,6 @@ mvn spotless:apply
 ```
 citadel
 ├── core
-├── http-api
+├── http
 └── tests
 ```
