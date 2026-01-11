@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tsu.pod</groupId>
-    <artifactId>citadel</artifactId>
+    <artifactId>cognos</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -16,7 +16,7 @@
 
     <modules>
         <module>core</module>
-        <module>http-api</module>
+        <module>http</module>
         <module>tests</module>
     </modules>
 
@@ -33,13 +33,15 @@
 
     <build>
         <plugins>
+            <!-- Code formatting -->
             <plugin>
                 <groupId>com.diffplug.spotless</groupId>
                 <artifactId>spotless-maven-plugin</artifactId>
                 <version>2.44.0</version>
                 <executions>
-                    <!-- Runs formatting before compilation -->
                     <execution>
+                        <id>format</id>
+                        <phase>validate</phase>
                         <goals>
                             <goal>apply</goal>
                         </goals>
@@ -47,7 +49,14 @@
                 </executions>
                 <configuration>
                     <java>
-                        <googleJavaFormat/>
+                        <googleJavaFormat>
+                            <version>1.17.0</version>
+                            <style>AOSP</style>
+                        </googleJavaFormat>
+                        <!-- Optional additional rules -->
+                        <removeUnusedImports />
+                        <trimTrailingWhitespace />
+                        <endWithNewline />
                     </java>
                 </configuration>
             </plugin>

@@ -1,4 +1,4 @@
-# citadel
+# cognos
 
 ## commands
 
@@ -13,8 +13,8 @@ mvn spotless:apply
 ## structure
 
 ```
-citadel
+cognos
 ├── core
-├── http-api
+├── http
 └── tests
 ```
