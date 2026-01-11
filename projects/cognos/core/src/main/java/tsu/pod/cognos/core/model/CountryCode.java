@@ -1,4 +1,4 @@
-package tsu.pod.citadel.core.model;
+package tsu.pod.cognos.core.model;
 
 import java.util.Arrays;
 import java.util.List;

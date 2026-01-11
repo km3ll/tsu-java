@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>tsu.pod</groupId>
-        <artifactId>citadel</artifactId>
+        <artifactId>cognos</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
