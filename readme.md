@@ -3,6 +3,7 @@
 ## projects
 
 - [base-app](projects/base-app)
+- [citadel](projects/citadel)
 - [etl-index-zettels](projects/etl-index-zettels)
 
 ## backup
