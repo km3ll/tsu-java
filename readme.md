@@ -4,7 +4,6 @@
 
 - [base-app](projects/base-app)
 - [etl-index-zettels](projects/etl-index-zettels)
-- [the-book](projects/the-book)
 
 ## backup
 
