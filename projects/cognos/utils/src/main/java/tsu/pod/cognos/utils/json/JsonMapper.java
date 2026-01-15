@@ -3,10 +3,10 @@ package tsu.pod.cognos.utils.json;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public final class JsonUtils {
+public final class JsonMapper {
 
     public static final ObjectMapper MAPPER =
             new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-    private JsonUtils() {}
+    private JsonMapper() {}
 }

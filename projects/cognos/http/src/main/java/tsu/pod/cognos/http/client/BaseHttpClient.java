@@ -7,7 +7,7 @@ import java.net.http.HttpResponse;
 import java.time.Duration;
 import tsu.pod.cognos.http.client.dto.ApiResponse;
 import tsu.pod.cognos.http.client.dto.DebitRequest;
-import tsu.pod.cognos.utils.json.JsonUtils;
+import tsu.pod.cognos.utils.json.JsonMapper;
 
 public class BaseHttpClient implements BaseClient {
 
@@ -32,7 +32,7 @@ public class BaseHttpClient implements BaseClient {
         try {
             HttpResponse<String> response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
-            return JsonUtils.MAPPER.readValue(response.body(), ApiResponse.class);
+            return JsonMapper.MAPPER.readValue(response.body(), ApiResponse.class);
         } catch (Exception e) {
             throw new RuntimeException("Failed to get account balance", e);
         }
@@ -43,7 +43,7 @@ public class BaseHttpClient implements BaseClient {
 
         String url = String.format("https://api.bank.com/accounts/%s/debit", accountId);
 
-        String body = JsonUtils.MAPPER.writeValueAsString(new DebitRequest(amount));
+        String body = JsonMapper.MAPPER.writeValueAsString(new DebitRequest(amount));
         HttpRequest request =
                 HttpRequest.newBuilder()
                         .uri(URI.create(url))
@@ -55,7 +55,7 @@ public class BaseHttpClient implements BaseClient {
         try {
             HttpResponse<String> response =
                     client.send(request, HttpResponse.BodyHandlers.ofString());
-            return JsonUtils.MAPPER.readValue(response.body(), ApiResponse.class);
+            return JsonMapper.MAPPER.readValue(response.body(), ApiResponse.class);
         } catch (Exception e) {
             throw new RuntimeException("Failed to debit", e);
         }
