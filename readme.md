@@ -3,7 +3,7 @@
 ## base
 
 - [base-app](base/base-app)
-- [base-cognos](base/cognos)
+- [base-cognos](base/base-cognos)
 
 ## books
 
