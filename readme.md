@@ -1,14 +1,14 @@
 # tsu-java
 
-## projects
+## base
 
-- [base-app](projects/base-app)
-- [cognos](projects/cognos)
-- [etl-index-zettels](projects/etl-index-zettels)
+- [base-app](base/base-app)
+- [base-cognos](base/cognos)
 
-## backup
+## books
 
-- [book-design-patterns](backup/book-design-patterns)
-- [learn-basics](backup/learn-basics)
-- [learn-jdbc](backup/learn-jdbc)
-- [learn-testing](backup/learn-testing)
+- [book-design-patterns](books/book-design-patterns)
+
+## etl
+
+- [etl-index-zettels](etl/etl-index-zettels)
